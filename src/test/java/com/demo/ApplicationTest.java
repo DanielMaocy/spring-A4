@@ -1,10 +1,14 @@
 package com.demo;
 
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
 import com.demo.config.ApplicationConfig;
+import com.demo.entity.Order;
 
 /**
  * 测试类
@@ -17,4 +21,15 @@ import com.demo.config.ApplicationConfig;
 @ContextConfiguration(classes= {ApplicationConfig.class})
 public class ApplicationTest {
 
+	@Autowired
+	ApplicationConfig config;
+	
+	@Autowired(required=false)
+	Order order;
+	
+	@Test
+	public void test() {
+		assertTrue("ApplicationConfig为空！", null != config);
+		assertTrue("Order为空！", null != order);
+	}
 }
