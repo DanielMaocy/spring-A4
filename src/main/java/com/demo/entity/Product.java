@@ -1,6 +1,7 @@
 package com.demo.entity;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 /**
  * 产品
@@ -16,6 +17,9 @@ public class Product {
 	
 	// 单价
 	private BigDecimal price;
+	
+	// 产地
+	private List<String> originList;
 
 	public String getName() {
 		return name;
@@ -33,7 +37,18 @@ public class Product {
 		this.price = price;
 	}
 	
+	public List<String> getOriginList() {
+		return originList;
+	}
+
+	public void setOriginList(List<String> originList) {
+		this.originList = originList;
+	}
+
 	public void printProductInfo() {
 		System.out.println("产品名称：" + this.name + "; 单价：" + this.price);
+		for (String origin : originList) {
+			System.out.println("产地：" + origin);
+		}
 	}
 }

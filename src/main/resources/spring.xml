@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+
+	<bean id="product" class="com.demo.entity.Product">
+		<property name="name" value="Iphone XS"></property>
+		<property name="price" value="12500"></property>
+		<property name="originList">
+			<list>
+				<value>中国大陆</value>
+				<value>中国台湾</value>
+				<value>越南河内</value>
+				<value>泰国曼谷</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="order" class="com.demo.entity.Order">
+		<constructor-arg ref="product"></constructor-arg>
+		<property name="orderNumber" value="00000000000123"></property>
+	</bean>
+</beans>

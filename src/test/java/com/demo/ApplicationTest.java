@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import com.demo.config.ApplicationConfig;
+
 import com.demo.entity.Order;
 
 /**
@@ -18,18 +18,14 @@ import com.demo.entity.Order;
  * @Date: 2019年3月6日 下午2:57:03
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes= {ApplicationConfig.class})
+@ContextConfiguration("/spring.xml")
 public class ApplicationTest {
 
-	@Autowired
-	ApplicationConfig config;
-	
 	@Autowired
 	Order order;
 	
 	@Test
 	public void test() {
-		assertTrue("ApplicationConfig为空！", null != config);
 		assertTrue("Order为空！", null != order);
 		order.printOrderInfo();
 	}

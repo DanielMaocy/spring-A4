@@ -15,6 +15,11 @@ public class Order {
 	// 产品
 	private Product product;
 	
+	public Order(Product product) {
+		super();
+		this.product = product;
+	}
+
 	public void printOrderInfo() {
 		System.out.println("订单编号：" + this.orderNumber);
 		product.printProductInfo();
