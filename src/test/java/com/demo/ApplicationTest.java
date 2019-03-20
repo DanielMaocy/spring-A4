@@ -24,12 +24,13 @@ public class ApplicationTest {
 	@Autowired
 	ApplicationConfig config;
 	
-	@Autowired(required=false)
+	@Autowired
 	Order order;
 	
 	@Test
 	public void test() {
 		assertTrue("ApplicationConfig为空！", null != config);
 		assertTrue("Order为空！", null != order);
+		order.printOrderInfo();
 	}
 }
