@@ -2,8 +2,6 @@ package com.demo.entity;
 
 import java.math.BigDecimal;
 
-import org.springframework.stereotype.Component;
-
 /**
  * 产品
  * @Title: Product
@@ -11,7 +9,6 @@ import org.springframework.stereotype.Component;
  * @Description: 
  * @Date: 2019年3月20日 上午10:55:38
  */
-@Component // 声明Bean
 public class Product {
 
 	// 产品名称
