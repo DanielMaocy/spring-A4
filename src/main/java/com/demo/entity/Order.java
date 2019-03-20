@@ -1,7 +1,5 @@
 package com.demo.entity;
 
-import java.math.BigDecimal;
-
 /**
  * 订单
  * @Title: Order
