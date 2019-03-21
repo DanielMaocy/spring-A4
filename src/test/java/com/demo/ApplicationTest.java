@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.demo.config.ApplicationConfig;
 import com.demo.entity.Order;
 
 /**
@@ -18,7 +19,8 @@ import com.demo.entity.Order;
  * @Date: 2019年3月6日 下午2:57:03
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("/spring.xml")
+//@ContextConfiguration("/spring.xml")
+@ContextConfiguration(classes = {ApplicationConfig.class})
 public class ApplicationTest {
 
 	@Autowired

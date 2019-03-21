@@ -8,17 +8,9 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
-	
-	<!-- 引入Java Config配置 -->
-	<bean class="com.demo.config.ApplicationConfig"></bean>
-	
-	<!-- 引入XML配置 -->
-	<import resource="merchantSpring.xml" />
-	
-	<!-- <bean id="order" class="com.demo.entity.Order">
-		<constructor-arg ref="product"></constructor-arg>
-		<constructor-arg ref="payInfo"></constructor-arg>
-		<constructor-arg ref="merchant"></constructor-arg>
-		<property name="orderNumber" value="00000000000123"></property>
-	</bean> -->
+
+	<bean id="merchant" class="com.demo.entity.Merchant">
+		<property name="merNo" value="21404"></property>
+		<property name="merName" value="张三"></property>
+	</bean>
 </beans>
