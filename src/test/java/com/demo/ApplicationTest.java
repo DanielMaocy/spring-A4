@@ -21,34 +21,41 @@ import com.demo.entity.Product;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes= {ApplicationConfig.class})
-//@ContextConfiguration("/spring.xml")
-//@ActiveProfiles("prod")
 public class ApplicationTest {
 
 	@Autowired(required=false)
-	@Qualifier("orderProd")
 	private Order order;
 	
 	@Autowired(required=false)
-	@Qualifier("productProd")
+	private Order order2;
+	
+	@Autowired(required=false)
 	private Product product;
 	
 	@Autowired(required=false)
-	@Qualifier("merDev")
+	private Product product2;
+	
+	@Autowired(required=false)
 	private Merchant merchant;
 	
+	@Autowired(required=false)
+	private Merchant merchant2;
+	
 	@Test
-	public void test() {
-		order.printOrderInfo();
+	public void testOrder() {
+		System.out.println(order.hashCode());
+		System.out.println(order2.hashCode());
 	}
 	
 	@Test
 	public void testProduct() {
-		product.printProductInfo();
+		System.out.println(product.hashCode());
+		System.out.println(product2.hashCode());
 	}
 	
 	@Test
 	public void testMerchant() {
-		merchant.printMerchantInfo();
+		System.out.println(merchant.hashCode());
+		System.out.println(merchant2.hashCode());
 	}
 }
