@@ -5,15 +5,11 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
-	<beans profile="dev">
-		<bean id="product" class="com.demo.entity.Product">
-			<property name="productName" value="华为 meta20"></property>
-		</bean>
-	</beans>
+	<bean id="productDev" class="com.demo.entity.Product" primary="true">
+		<property name="productName" value="华为 meta20"></property>
+	</bean>
 
-	<beans profile="prod">
-		<bean id="product" class="com.demo.entity.Product">
-			<property name="productName" value="iphone XL"></property>
-		</bean>
-	</beans>
+	<bean id="productProd" class="com.demo.entity.Product">
+		<property name="productName" value="iphone XL"></property>
+	</bean>
 </beans>
