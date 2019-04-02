@@ -1,12 +1,14 @@
 package com.demo.config;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
 import com.demo.entity.Order;
 
 @Configuration
+@ComponentScan("com.demo.entity")
 public class ApplicationConfig {
 
 	@Bean
