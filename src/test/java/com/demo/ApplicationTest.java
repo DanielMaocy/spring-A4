@@ -3,14 +3,12 @@ package com.demo;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.demo.config.ApplicationConfig;
-import com.demo.entity.Merchant;
-import com.demo.entity.Order;
-import com.demo.entity.Product;
+import com.demo.service.PayService;
+import com.demo.service.RiskService;
 
 /**
  * 测试类
@@ -23,39 +21,21 @@ import com.demo.entity.Product;
 @ContextConfiguration(classes= {ApplicationConfig.class})
 public class ApplicationTest {
 
-	@Autowired(required=false)
-	private Order order;
+	@Autowired
+	private PayService rmbPayService;
 	
-	@Autowired(required=false)
-	private Order order2;
-	
-	@Autowired(required=false)
-	private Product product;
-	
-	@Autowired(required=false)
-	private Product product2;
-	
-	@Autowired(required=false)
-	private Merchant merchant;
-	
-	@Autowired(required=false)
-	private Merchant merchant2;
+	@Autowired
+	private PayService usdPayService;
 	
 	@Test
-	public void testOrder() {
-		System.out.println(order.hashCode());
-		System.out.println(order2.hashCode());
+	public void testRMBPayService() {
+		rmbPayService.payment("RMB00001");
 	}
 	
 	@Test
-	public void testProduct() {
-		System.out.println(product.hashCode());
-		System.out.println(product2.hashCode());
-	}
-	
-	@Test
-	public void testMerchant() {
-		System.out.println(merchant.hashCode());
-		System.out.println(merchant2.hashCode());
+	public void testUSDPayService() {
+		usdPayService.payment("USD00002");
+		RiskService riskService = (RiskService) usdPayService;
+		riskService.limitPayNum();
 	}
 }
