@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.demo.config.ApplicationConfig;
 import com.demo.service.PayService;
 import com.demo.service.RiskService;
 
@@ -18,7 +17,7 @@ import com.demo.service.RiskService;
  * @Date: 2019年3月6日 下午2:57:03
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes= {ApplicationConfig.class})
+@ContextConfiguration("/spring.xml")
 public class ApplicationTest {
 
 	@Autowired

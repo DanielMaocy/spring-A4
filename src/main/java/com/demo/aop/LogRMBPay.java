@@ -1,11 +1,5 @@
 package com.demo.aop;
 
-import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.AfterThrowing;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
-
 /**
  * 支付日志
  * @Title: Log
@@ -13,7 +7,6 @@ import org.aspectj.lang.annotation.Before;
  * @Description: 
  * @Date: 2019年4月4日 上午10:04:54
  */
-@Aspect // 将LogPay类标注为一个切面
 public class LogRMBPay {
 
 	/**
@@ -23,7 +16,6 @@ public class LogRMBPay {
 	 * @Author: maocy
 	 * @Date: 2019年4月4日 上午10:06:01
 	 */
-	@Before("execution(** com.demo.service.RMBPayService.payment(..))")
 	public void payBefore() {
 		System.out.println("=========RMB支付开始=========");
 	}
@@ -35,7 +27,6 @@ public class LogRMBPay {
 	 * @Author: maocy
 	 * @Date: 2019年4月4日 上午10:17:11
 	 */
-	@After("execution(** com.demo.service.RMBPayService.payment(..))")
 	public void payAfter() {
 		System.out.println("=========RMB支付结束=========");
 	}
@@ -47,7 +38,6 @@ public class LogRMBPay {
 	 * @Author: maocy
 	 * @Date: 2019年4月4日 上午10:17:44
 	 */
-	@AfterReturning("execution(** com.demo.service.RMBPayService.payment(..))")
 	public void payReturn() {
 		System.out.println("=========RMB支付返回=========");
 	}
@@ -59,7 +49,6 @@ public class LogRMBPay {
 	 * @Author: maocy
 	 * @Date: 2019年4月4日 上午10:17:54
 	 */
-	@AfterThrowing("execution(** com.demo.service.RMBPayService.payment(..))")
 	public void payException() {
 		System.out.println("=========RMB支付异常=========");
 	}
